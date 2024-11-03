@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost;databaseName=custom-lane-rates;encrypt=false
+    createDatabaseIfNotExist: true
+    username: sa
+    password: test@1234
+    show-sql: true
+  jpa:
+    hibernate:
+      ddl-auto: update
