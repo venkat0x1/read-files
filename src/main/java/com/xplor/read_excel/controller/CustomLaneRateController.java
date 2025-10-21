@@ -45,7 +45,7 @@ public class CustomLaneRateController {
 //     }
 
     @GetMapping("/health-ckeck")
-    public ResponseEntity<String> getRatesXMLFile() throws IOException {
+    public ResponseEntity<String> healthCkeck() {
        return "Healthy..!";
     }
 
