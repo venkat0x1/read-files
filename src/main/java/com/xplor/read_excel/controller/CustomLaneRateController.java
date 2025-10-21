@@ -16,32 +16,37 @@ import java.io.IOException;
 @RequestMapping("/custom-lane-rates")
 public class CustomLaneRateController {
 
-    @Autowired
-    private CustomLaneRateService customLaneRateService;
+//     @Autowired
+//     private CustomLaneRateService customLaneRateService;
 
-    @PostMapping("/upload-rates")
-    public ResponseEntity<String> uploadRates(@RequestParam("file") MultipartFile file) throws IOException {
+//     @PostMapping("/upload-rates")
+//     public ResponseEntity<String> uploadRates(@RequestParam("file") MultipartFile file) throws IOException {
 
-        if (file.isEmpty()) {
-            throw new IllegalArgumentException("Please upload a file");
-        }
+//         if (file.isEmpty()) {
+//             throw new IllegalArgumentException("Please upload a file");
+//         }
 
-        customLaneRateService.extractAndSaveDataFromFile(file);
+//         customLaneRateService.extractAndSaveDataFromFile(file);
 
-        return ResponseEntity.ok("File uploaded successfully");
-    }
+//         return ResponseEntity.ok("File uploaded successfully");
+//     }
 
 
-    @GetMapping("/rates-xml-file")
-    public ResponseEntity<File> getRatesXMLFile() throws IOException {
-        File file = customLaneRateService.getLaneRatesXMLFile();
-        return ResponseEntity.ok(file);
+//     @GetMapping("/rates-xml-file")
+//     public ResponseEntity<File> getRatesXMLFile() throws IOException {
+//         File file = customLaneRateService.getLaneRatesXMLFile();
+//         return ResponseEntity.ok(file);
 
-        // Prepare the response with the file
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName());
+//         // Prepare the response with the file
+// //        HttpHeaders headers = new HttpHeaders();
+// //        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName());
 
-//        return new ResponseEntity<>(new FileSystemResource(file), headers, HttpStatus.OK);
+// //        return new ResponseEntity<>(new FileSystemResource(file), headers, HttpStatus.OK);
+//     }
+
+    @GetMapping("/health-ckeck")
+    public ResponseEntity<String> getRatesXMLFile() throws IOException {
+       return "Healthy..!";
     }
 
 
