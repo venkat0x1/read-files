@@ -46,7 +46,7 @@ public class CustomLaneRateController {
 //     }
 
     @GetMapping("/health-ckeck")
-    public ResponseEntity<String> healthCkeck() {
+    public String healthCkeck() {
        return "Healthy..!";
     }
 
